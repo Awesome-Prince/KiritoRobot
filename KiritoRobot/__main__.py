@@ -22,4 +22,4 @@ for name in files:
 print("Your Host Is Successfully Done!")
 print("Visit @BlackLover_Support if any error")
 if __name__ == "__main__":
-    BlackLover.run_until_disconnected()
+    KiritoRobot.run_until_disconnected()
