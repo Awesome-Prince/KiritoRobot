@@ -2,10 +2,10 @@
 # // @BlackLoverNetwork //
 from telethon import Button, events
 
-from .. import BlackLover
+from KiritoRobot import KiritoRobot
 
 
-@BlackLover.on(events.NewMessage(incoming=True, pattern="/start"))
+@KiritoRobot.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
     await event.reply(
         "Suprise Suprise Mother Fucker, The King Is Back!",
@@ -16,6 +16,6 @@ async def start(event):
     )
 
 
-@BlackLover.on(events.callbackquery.CallbackQuery(data="help"))
+@KiritoRobot.on(events.callbackquery.CallbackQuery(data="help"))
 async def ex(event):
     await event.edit("Bot is under Development!")
