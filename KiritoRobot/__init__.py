@@ -30,7 +30,7 @@ logging.basicConfig(
 LOGGER = logging.getLogger(__name__)
 TOKEN = e.get("TOKEN")
 OWNER_ID = int(os.environ.get("OWNER_ID", 5362971543))
-API_KEY = int(os.environ.get('API_KEY', 8378464))
+API_KEY = int(os.environ.get("API_KEY", 8378464))
 API_HASH = os.environ.get("API_HASH", "0887aac30af224501dd2a470913e990b")
 DB_URI = os.environ.get("DATABASE_URL", "")
 BOT_ID = 5534493283
