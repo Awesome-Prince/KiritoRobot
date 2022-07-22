@@ -24,4 +24,9 @@ for name in files:
 print("Your Host Is Successfully Done!")
 print("Visit @BlackLover_Support if any error")
 
-tbot.start(bot_token=TOKEN)
+try:
+  tbot.start(bot_token=TOKEN)
+except Exception as z:
+  print(z)
+
+tbot.run_until_disconnected()
