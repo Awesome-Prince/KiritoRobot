@@ -82,7 +82,6 @@ def load_module(shortname):
         mod.KiritoRobot = KiritoRobot
         mod.tbot = tbot
         mod.logger = logging.getLogger(shortname)
-        mod.THUMB = THUMB
         spec.loader.exec_module(mod)
         sys.modules["KiritoRobot.plugins." + shortname] = mod
         print("[KIRITOROBOT] Successfully Imported " + shortname)
