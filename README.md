@@ -1,4 +1,6 @@
-[KiritoRobot](https://telegra.ph/file/36dd96df77bc2b7ef9b3d.jpg)
+![KiritoRobot](https://telegra.ph/file/36dd96df77bc2b7ef9b3d.png)
+
+# KiritoRobot [ BETA ]
 
 **A modular Telegram Python bot running on python3 with a telethon, sqlalchemy.**
 
