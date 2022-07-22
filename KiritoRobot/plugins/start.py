@@ -2,10 +2,6 @@
 # // @BlackLoverNetwork //
 from telethon import Button, events
 
-
-
-import sys
-
 from .. import BlackLover
 
 
