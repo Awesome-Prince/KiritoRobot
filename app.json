@@ -20,7 +20,7 @@
             "description": "You API ID from my.telegram.org",
             "value": ""
         },
-        "BOT_TOKEN": {
+        "TOKEN": {
             "description": "Bot token, get it from @BotFather.",
             "value": ""
         }
