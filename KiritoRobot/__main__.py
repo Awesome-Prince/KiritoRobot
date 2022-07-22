@@ -6,6 +6,7 @@ import logging
 from pathlib import Path
 
 from KiritoRobot.utils import load_plugins
+from . import tbot
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
@@ -22,4 +23,4 @@ for name in files:
 print("Your Host Is Successfully Done!")
 print("Visit @BlackLover_Support if any error")
 if __name__ == "__main__":
-    KiritoRobot.run_until_disconnected()
+    tbot.run_until_disconnected()
