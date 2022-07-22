@@ -5,7 +5,7 @@ import glob
 import logging
 from pathlib import Path
 
-from TelethonBot.utils import load_plugins
+from KiritoRobot.utils import load_plugins
 
 from . import BlackLover
 
