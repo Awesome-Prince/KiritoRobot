@@ -30,10 +30,13 @@ logging.basicConfig(
 LOGGER = logging.getLogger(__name__)
 TOKEN = e.get("TOKEN")
 OWNER_ID = int(os.environ.get("OWNER_ID", 5362971543))
-API_KEY = int(os.environ.get("API_KEY", ))
+API_KEY = int(
+    os.environ.get(
+        "API_KEY",
+    )
+)
 API_HASH = os.environ.get("API_HASH", "")
 DB_URI = os.environ.get("DATABASE_URL", "")
 BOT_ID = 5534493283
 
 BlackLover = TelegramClient(None, API_KEY, API_HASH)
-

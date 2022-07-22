@@ -2,13 +2,16 @@
 # // @BlackLoverNetwork //
 
 import glob
-from pathlib import Path
-from TelethonBot.utils import load_plugins
 import logging
+from pathlib import Path
+
+from TelethonBot.utils import load_plugins
+
 from . import BlackLover
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
+logging.basicConfig(
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
+)
 
 path = "KiritoRobot/plugins/*.py"
 files = glob.glob(path)

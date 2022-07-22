@@ -8,7 +8,7 @@ from pathlib import Path
 
 from telethon import events
 
-from . import OWNER_ID, BlackLover
+from . import OWNER_ID
 
 
 def KiritoRobot(**args):
