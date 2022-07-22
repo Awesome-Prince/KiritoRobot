@@ -2,7 +2,7 @@
 # // @BlackLoverNetwork //
 from telethon import Button, events
 
-from KiritoRobot import KiritoRobot
+from KiritoRobot.utils import KiritoRobot
 
 
 @KiritoRobot.on(events.NewMessage(incoming=True, pattern="/start"))
