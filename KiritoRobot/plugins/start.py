@@ -5,7 +5,7 @@ from telethon import Button, events
 from KiritoRobot.utils import KiritoRobot
 
 
-@KiritoRobot.on(events.NewMessage(incoming=True, pattern="/start"))
+@KiritoRobot(pattern=("/start"))
 async def start(event):
     await event.reply(
         "Suprise Suprise Mother Fucker, The King Is Back!",
