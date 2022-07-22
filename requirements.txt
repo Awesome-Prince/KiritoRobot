@@ -33,7 +33,7 @@ heroku3
 bing_image_urls
 telegraph
 emoji
-pytgcalls==3.0.0.dev19
+pytgcalls
 yt-dlp
 ffmpeg-python
 python-dotenv
