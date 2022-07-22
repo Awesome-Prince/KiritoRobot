@@ -1,1 +1,1 @@
-BlackLover: python -m KiritoRobot
+worker: python -m KiritoRobot
