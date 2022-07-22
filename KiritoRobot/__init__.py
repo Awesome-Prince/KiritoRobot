@@ -1,17 +1,39 @@
 # By < @Awesome_Prince >
 # // @BlackLoverNeterk //
 
-from telethon import TelegramClient
-from decouple import config
 import logging
+import os
+import sys
 import time
+from logging import INFO, basicConfig, getLogger
+from os import environ as e
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
+from telethon import TelegramClient
+from telethon.sessions import StringSession
 
-# Basics
-API_ID = config("API_ID", default=None, cast=int)
-API_HASH = config("API_HASH", default=None)
-BOT_TOKEN = config("BOT_TOKEN", default=None)
+StartTime = time.time()
+try:
+    from dotenv import load_dotenv
 
-BlackLover = TelegramClient('BlackLover', API_ID, API_HASH).start(bot_token=BOT_TOKEN) 
+    load_dotenv()
+except ImportError:
+    pass
+
+CMD_HELP = {}
+
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+    handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
+)
+
+LOGGER = logging.getLogger(__name__)
+TOKEN = e.get("TOKEN")
+OWNER_ID = int(os.environ.get("OWNER_ID", 5362971543))
+API_KEY = int(os.environ.get("API_KEY", ))
+API_HASH = os.environ.get("API_HASH", "")
+DB_URI = os.environ.get("DATABASE_URL", "")
+BOT_ID = 5534493283
+
+BlackLover = TelegramClient(None, API_KEY, API_HASH)
+
