@@ -16,6 +16,6 @@ async def start(event):
     )
 
 
-@bot.on(events.callbackquery.CallbackQuery(data="help"))
+@tbot.on(events.callbackquery.CallbackQuery(data="help"))
 async def ex(event):
     await event.edit("Bot is under Development!")
