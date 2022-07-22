@@ -6,6 +6,7 @@ import logging
 from pathlib import Path
 
 from KiritoRobot.utils import load_plugins
+
 from . import tbot
 
 logging.basicConfig(
