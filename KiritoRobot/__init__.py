@@ -36,3 +36,4 @@ DB_URI = os.environ.get("DATABASE_URL", "")
 BOT_ID = 5534493283
 
 BlackLover = TelegramClient(None, API_KEY, API_HASH)
+tbot = TelegramClient(None, API_KEY, API_HASH)
