@@ -16,6 +16,6 @@ async def start(event):
     )
 
 
-@KiritoRobot.on(events.callbackquery.CallbackQuery(data="help"))
+@KiritoRobot(events.callbackquery.CallbackQuery(data="help"))
 async def ex(event):
     await event.edit("Bot is under Development!")
