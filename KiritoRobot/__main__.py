@@ -7,8 +7,6 @@ from pathlib import Path
 
 from KiritoRobot.utils import load_plugins
 
-from . import tbot
-
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
 )
