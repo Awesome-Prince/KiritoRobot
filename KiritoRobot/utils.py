@@ -9,7 +9,7 @@ from pathlib import Path
 from telethon import events
 
 from . import OWNER_ID
-
+from . import tbot
 
 def KiritoRobot(**args):
     pattern = args.get("pattern", None)
