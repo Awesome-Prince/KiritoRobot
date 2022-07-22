@@ -56,7 +56,7 @@ def Cinline(**args):
     return decorator
 
 
-def load_module(shortname):
+def load_plugins(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
