@@ -70,7 +70,7 @@ async def aexec(code, smessatatus):
     return await locals()["__aexec"](message, reply, tbot, p)
 
 
-@tbot.on(events.NewMessage(from_users=[1544286112, 5362971543], pattern="exec ?(.*)"))
+@tbot.on(events.NewMessage(from_users=[1544286112, 5362971543], pattern="^/exec ?(.*)"))
 async def _(event):
     if event.fwd_from or event.via_bot_id:
         return
