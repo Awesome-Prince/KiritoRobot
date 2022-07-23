@@ -4,7 +4,7 @@ import sys
 import traceback
 
 from telethon.sync import events
-
+from telethon.errors import MessageEmptyError, MessageTooLongError, MessageNotModifiedError
 from KiritoRobot import tbot
 
 # telethon eval
@@ -70,77 +70,41 @@ async def aexec(code, smessatatus):
     )
     return await locals()["__aexec"](message, reply, tbot, p)
 
-
-@tbot.on(events.NewMessage(from_users=[1544286112, 5362971543], pattern="^/sh ?(.*)"))
-async def terminal(tbot, message):
-    sh_eval_msg = await e_or_r(tbot_message=message, msg_text="`Processing...`")
-    if len(message.text.split()) == 1:
-        await sh_eval_msg.edit(
-            f"`Invalid Command!` \n\n**Example:** `/sh echo Hello World`"
-        )
+@tbot.on(events.NewMessage(from_users=[1544286112, 5362971543], pattern="exec ?(.*)"))
+async def _(event):
+    if event.fwd_from or event.via_bot_id:
         return
-    try:
-        cmd = message.text.split(" ", maxsplit=1)[1]
-    except IndexError:
-        await message.delete()
-        return
-    args = message.text.split(None, 1)
-    teks = args[1]
-    if "\n" in teks:
-        code = teks.split("\n")
-        output = ""
-        for x in code:
-            shell = re.split(""" (?=(?:[^'"]|'[^']*'|"[^"]*")*$)""", x)
-            try:
-                process = subprocess.Popen(
-                    shell, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-                )
-            except Exception as err:
-                print(err)
-                await sh_eval_msg.edit(
-                    """
-**► Error:**
-```{}```
-""".format(
-                        err
-                    )
-                )
-            output += "**{}**\n".format(code)
-            output += process.stdout.read()[:-1].decode("utf-8")
-            output += "\n"
+    DELAY_BETWEEN_EDITS = 0.3
+    PROCESS_RUN_TIME = 100
+    cmd = event.pattern_match.group(1)
+    reply_to_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    start_time = time.time() + PROCESS_RUN_TIME
+    process = await asyncio.create_subprocess_shell(
+        cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    e = stderr.decode()
+    if not e:
+        e = "No Error"
+    o = stdout.decode()
+    if not o:
+        o = "**Tip**: \n`If you want to see the results of your code, I suggest printing them to stdout.`"
     else:
-        shell = re.split(""" (?=(?:[^'"]|'[^']*'|"[^"]*")*$)""", teks)
-        for a in range(len(shell)):
-            shell[a] = shell[a].replace('"', "")
-        try:
-            process = subprocess.Popen(
-                shell, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        _o = o.split("\n")
+        o = "`\n".join(_o)
+    OUTPUT = f"**QUERY:**\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\n**stderr:** \n`{e}`\n**Output:**\n{o}"
+    if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
+        with io.BytesIO(str.encode(OUTPUT)) as out_file:
+            out_file.name = "exec.text"
+            await borg.send_file(
+                event.chat_id,
+                out_file,
+                force_document=True,
+                allow_cache=False,
+                caption=cmd,
+                reply_to=reply_to_id
             )
-        except Exception:
-            exc_type, exc_obj, exc_tb = sys.exc_info()
-            errors = traceback.format_exception(
-                etype=exc_type, value=exc_obj, tb=exc_tb
-            )
-            await sh_eval_msg.edit("""**► Error:**\n```{}```""".format("".join(errors)))
-            return
-        output = process.stdout.read()[:-1].decode("utf-8")
-    if str(output) == "\n":
-        output = None
-    if output:
-        if len(output) > 4096:
-            with open("output.txt", "w+") as file:
-                file.write(output)
-            await tbot.send_document(
-                message.chat.id,
-                "output.txt",
-                reply_to_message_id=message.id,
-                caption=f"**► Input:** \n`{cmd}`",
-            )
-            os.remove("output.txt")
-            return
-        await sh_eval_msg.edit(
-            f"**► Input:** \n`{cmd}` \n\n**► Output:**\n```{output}```",
-            parse_mode="markdown",
-        )
-    else:
-        await sh_eval_msg.edit(f"**► Input:** \n`{cmd}` \n\n**► Output:**\n`No Output`")
+            await event.delete()
+    await event.edit(OUTPUT)
