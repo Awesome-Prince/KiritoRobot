@@ -1,5 +1,6 @@
 import functools
 
+
 def is_admin(func):
     @functools.wraps(func)
     async def a_c(event):
@@ -15,4 +16,5 @@ def is_admin(func):
             await func(event, _s)
         else:
             await event.reply("Only Admins can execute this command!")
+
     return a_c
