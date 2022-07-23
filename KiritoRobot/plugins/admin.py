@@ -56,6 +56,7 @@ async def promote(event, perm):
 
     await event.reply(f"Succesfully Promoted {input_str} in {event.chat.title}")
 
+
 @tbot.on(events.NewMessage(pattern="^[!?/]superpromote ?(.*)"))
 @is_admin
 async def promote(event, perm):
@@ -97,6 +98,7 @@ async def promote(event, perm):
         return
 
     await event.reply(f"Succesfully SuperPromoted {input_str} in {event.chat.title}")
+
 
 @tbot.on(events.NewMessage(pattern="^[!?/]safepromote ?(.*)"))
 @is_admin
@@ -140,7 +142,6 @@ async def promote(event, perm):
 
     await event.reply(f"Succesfully Promoted {input_str} in {event.chat.title}")
 
- 
 
 @tbot.on(events.NewMessage(pattern="^[!?/]demote ?(.*)"))
 @is_admin
