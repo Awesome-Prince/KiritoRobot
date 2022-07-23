@@ -16,7 +16,7 @@ async def eval(event):
     cmd = "".join(event.message.message.split(maxsplit=1)[1:])
     if not cmd:
         return
-    catevent = await client.send_message(event.chat.id, "`Running ...`", reply_to=event)
+    catevent = await tbot.send_message(event.chat.id, "`Running ...`", reply_to=event)
     old_stderr = sys.stderr
     old_stdout = sys.stdout
     redirected_output = sys.stdout = io.StringIO()
@@ -44,7 +44,7 @@ async def eval(event):
     if len(final_output) > MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(final_output)) as out_file:
             out_file.name = "eval.text"
-            await client.send_file(
+            await tbot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
