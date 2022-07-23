@@ -1,8 +1,9 @@
+import asyncio
 import io
 import sys
 import time
 import traceback
-import asyncio
+
 from telethon.sync import events
 
 from KiritoRobot import tbot
