@@ -74,7 +74,7 @@ async def promote(event, perm):
         await event.reply("Reply to a user or give its username to demote him!")
         return
     sed = await tbot(GetFullUserRequest(id=user.sender_id or input_str))
-    await Stark(
+    await tbot(
         EditAdminRequest(
             event.chat_id,
             user.sender_id or input_str,
