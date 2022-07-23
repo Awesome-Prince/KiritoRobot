@@ -56,6 +56,91 @@ async def promote(event, perm):
 
     await event.reply(f"Succesfully Promoted {input_str} in {event.chat.title}")
 
+@tbot.on(events.NewMessage(pattern="^[!?/]superpromote ?(.*)"))
+@is_admin
+async def promote(event, perm):
+    if event.is_private:
+        await event.reply("This cmd is made to be used in groups, not in PM!")
+        return
+
+    if not perm.add_admins:
+        await event.reply(
+            "You are missing the following rights to use this command:CanAddAdmins!"
+        )
+        return
+    input_str = event.pattern_match.group(1)
+    user = await event.get_reply_message()
+    if not input_str and not user:
+        await event.reply("Reply to a user or give its username to promote him!")
+        return
+    sed = await tbot(GetFullUserRequest(id=user.sender_id or input_str))
+    await tbot(
+        EditAdminRequest(
+            event.chat_id,
+            user.sender_id or input_str,
+            ChatAdminRights(
+                add_admins=True,
+                invite_users=True,
+                change_info=True,
+                ban_users=True,
+                delete_messages=True,
+                pin_messages=True,
+            ),
+            rank="BlackLover",
+        )
+    )
+
+    if not input_str:
+        await event.reply(
+            f"Successfully SuperPromoted [{sed.user.first_name}](tg://user?id={user.sender_id}) in {event.chat.title}!"
+        )
+        return
+
+    await event.reply(f"Succesfully SuperPromoted {input_str} in {event.chat.title}")
+
+ @tbot.on(events.NewMessage(pattern="^[!?/]safepromote ?(.*)"))
+@is_admin
+async def promote(event, perm):
+    if event.is_private:
+        await event.reply("This cmd is made to be used in groups, not in PM!")
+        return
+
+    if not perm.ban_users:
+        await event.reply(
+            "You are missing the following rights to use this command:CanBanUsers!"
+        )
+        return
+    input_str = event.pattern_match.group(1)
+    user = await event.get_reply_message()
+    if not input_str and not user:
+        await event.reply("Reply to a user or give its username to promote him!")
+        return
+    sed = await tbot(GetFullUserRequest(id=user.sender_id or input_str))
+    await tbot(
+        EditAdminRequest(
+            event.chat_id,
+            user.sender_id or input_str,
+            ChatAdminRights(
+                add_admins=False,
+                invite_users=True,
+                change_info=False,
+                ban_users=False,
+                delete_messages=True,
+                pin_messages=True,
+            ),
+            rank="Admin",
+        )
+    )
+
+    if not input_str:
+        await event.reply(
+            f"Successfully Promoted [{sed.user.first_name}](tg://user?id={user.sender_id}) in {event.chat.title}!"
+        )
+        return
+
+    await event.reply(f"Succesfully Promoted {input_str} in {event.chat.title}")
+
+ 
 
 @tbot.on(events.NewMessage(pattern="^[!?/]demote ?(.*)"))
 @is_admin
