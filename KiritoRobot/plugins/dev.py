@@ -1,7 +1,8 @@
 import io
 import sys
-import traceback
 import time
+import traceback
+
 from telethon.sync import events
 
 from KiritoRobot import tbot
