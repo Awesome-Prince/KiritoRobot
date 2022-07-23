@@ -29,4 +29,4 @@ try:
 except Exception as z:
     print(z)
 
-tbot.run_until_disconnected()
+
