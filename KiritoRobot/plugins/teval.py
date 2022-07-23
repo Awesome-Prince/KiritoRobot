@@ -1,9 +1,10 @@
-from KiritoRobot import tbot
-import os, logging, asyncio, io, sys, traceback
-from datetime import datetime
-from os import environ, execle
+import io
 import sys
+import traceback
+
 from telethon.sync import events
+
+from KiritoRobot import tbot
 
 # telethon eval
 
