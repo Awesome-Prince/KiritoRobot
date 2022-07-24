@@ -1,21 +1,21 @@
 # By < @Awesome-Prince >
 # // @BlackLoverNetwork //
-from telethon import Button, events
+from KiritoRobot import tbot
+from telethon import events, Button
 
-from KiritoRobot.utils import KiritoRobot
+PM_START_TEXT = """
+huh
+"""
 
-
-@KiritoRobot(pattern=("/start"))
+@tbot.on(events.NewMessage(pattern="^[?!/]start$"))
 async def start(event):
-    await event.reply(
-        "Suprise Suprise Mother Fucker, The King Is Back[!](https://telegra.ph/file/36dd96df77bc2b7ef9b3d.png)",
-        buttons=[
-            [Button.url("Support", url="https://t.me/blacklover_support")],
-            [Button.inline("Help", data="help")],
-        ],
-    )
 
+    if event.is_private:
+       await event.reply(PM_START_TEXT.format(event.sender.first_name), buttons=[
+        [Button.inline("System Call", data="help")],
+        [Button.url("Report Error", "https://t.me/BlackLover_Support")]])
+       return
 
-@tbot.on(events.callbackquery.CallbackQuery(data="help"))
-async def ex(event):
-    await event.edit("Bot is under Development!")
+    if event.is_group:
+       await event.reply("**System Is Alive!**")
+       return
