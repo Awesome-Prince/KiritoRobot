@@ -14,14 +14,12 @@ Hey there! This is Kirito again
 Tʀᴜsᴛ ɪɴ ᴍʏ ⚔️ AɪɴCʀᴀᴅ Sᴡᴏʀᴅ Sᴛʏʟᴇ ⚔️...
 ━━━━━━━━━━━━━━━━━━━━━━━━
 Main commands available:
- ❍ /start: Cʜᴇᴄᴋ Mᴇ... Iꜰ I Aᴍ Aʟɪᴠᴇ Oʀ Nᴏᴛ
- ❍ /help: Usᴇ Tʜɪs... Iꜰ Yᴏᴜ Nᴇᴇᴅ Mᴏʀᴇ Iɴꜰᴏ Aʙᴏᴜᴛ Mᴇ!
- ━━━━━━━━━━━━━━━━━━━━━━━━
- For Issues Report At @BlackLover_Support
- Powered by BlackLover [🖥](https://telegra.ph/file/b7d0d2c10a56e3b739611.png)
- ━━━━━━━━━━━━━━━━━━━━━━━━
-
-
+❍ /start: Cʜᴇᴄᴋ Mᴇ... Iꜰ I Aᴍ Aʟɪᴠᴇ Oʀ Nᴏᴛ
+❍ /help: Usᴇ Tʜɪs... Iꜰ Yᴏᴜ Nᴇᴇᴅ Mᴏʀᴇ Iɴꜰᴏ Aʙᴏᴜᴛ Mᴇ!
+━━━━━━━━━━━━━━━━━━━━━━━━
+For Issues Report At @BlackLover_Support
+Powered by @BlackLover_Network [🖥](https://telegra.ph/file/b7d0d2c10a56e3b739611.png)
+━━━━━━━━━━━━━━━━━━━━━━━━
 All commands can either be used with /.
 
 And the following:
