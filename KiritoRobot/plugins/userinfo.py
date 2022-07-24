@@ -71,4 +71,4 @@ async def info(event):
 
 @tbot.on(events.callbackquery.CallbackQuery(data="userinfo"))
 async def _(event):
-    await event.edit(MISC_HELP, buttons=[[Button.inline("◀ 𝖡𝖺𝖼𝗄", data="help")]])
+    await event.edit(USERINFO_HELP, buttons=[[Button.inline("◀ 𝖡𝖺𝖼𝗄", data="help")]])
