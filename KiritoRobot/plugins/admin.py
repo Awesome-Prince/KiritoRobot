@@ -200,9 +200,9 @@ async def invitelink(event):
 ADMIN_TEXT = """
 **🎮 A module from which admins of the chat can use!**
 
-‣ `/promote` - To Promote a user in the chat.
-‣ `/safepromote` - To Promote a user without ban rights.
-‣ `/superpromote` - To Promote a user with full rights.
-‣ `/demote` - To Demote a user in the chat.
-‣ `/invitelink` - To get invitelink of a chat.
+➛ `/promote` - To Promote a user in the chat.
+➛ `/safepromote` - To Promote a user without ban rights.
+➛ `/superpromote` - To Promote a user with full rights.
+➛ `/demote` - To Demote a user in the chat.
+➛ `/invitelink` - To get invitelink of a chat.
 """

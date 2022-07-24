@@ -8,14 +8,14 @@ from KiritoRobot.status import *
 BANS_TEXT = """
 **🎮 Some people need to be publicly banned; spammers, annoyances, or just trolls.**
 
-‣ `/kickme` - To self Kick you from a chat.
-‣ `/kick` - To kick someone from a chat.
-‣ `/unban` - To unban a member from the chat.
-‣ `/ban` - To Ban Someone from a chat.
-‣ `/dban` - To delete the replied msg and bans the user.
-‣ `/sban` - To delete the replied msg and kicks the user.
-‣ `/skick` - To Delete Your msg and kicks the user 
-‣ `/dkick` - To delete your msg and and kicks the replied user.
+➛ `/kickme` - To self Kick you from a chat.
+➛ `/kick` - To kick someone from a chat.
+➛ `/unban` - To unban a member from the chat.
+➛ `/ban` - To Ban Someone from a chat.
+➛ `/dban` - To delete the replied msg and bans the user.
+➛ `/sban` - To delete the replied msg and kicks the user.
+➛ `/skick` - To Delete Your msg and kicks the user 
+➛ `/dkick` - To delete your msg and and kicks the replied user.
 """
 
 
