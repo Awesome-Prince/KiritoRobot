@@ -9,11 +9,11 @@ btn =[
     [Button.inline("Zombies", data="zombies")]]
 
 HELP_TEXT = """
-Hey there! This is Kirito again
+Hey There! This Is Kirito Again
 ━━━━━━━━━━━━━━━━━━━━━━━━
 Tʀᴜsᴛ ɪɴ ᴍʏ ⚔️ AɪɴCʀᴀᴅ Sᴡᴏʀᴅ Sᴛʏʟᴇ ⚔️...
 ━━━━━━━━━━━━━━━━━━━━━━━━
-Main commands available:
+System Commands Available:
 ❍ /start: Cʜᴇᴄᴋ Mᴇ... Iꜰ I Aᴍ Aʟɪᴠᴇ Oʀ Nᴏᴛ
 ❍ /help: Usᴇ Tʜɪs... Iꜰ Yᴏᴜ Nᴇᴇᴅ Mᴏʀᴇ Iɴꜰᴏ Aʙᴏᴜᴛ Mᴇ!
 ━━━━━━━━━━━━━━━━━━━━━━━━
