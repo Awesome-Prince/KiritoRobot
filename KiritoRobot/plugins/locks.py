@@ -3,7 +3,7 @@ from KiritoRobot import tbot
 from KiritoRobot.status import *
 
 LOCKS_HELP = """
-**✘ Do stickers annoy you? or want to avoid people sharing links? or pictures? You're in the right place!**
+**🎮 Do stickers annoy you? or want to avoid people sharing links? or pictures? You're in the right place!**
 
 ‣ `/lock` - To lock a module in the chat.
 ‣ `/unlock` - To unlock a module in the chat.
