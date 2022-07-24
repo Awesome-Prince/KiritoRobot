@@ -1,6 +1,4 @@
-import KiritoRobot.utils 
 from . import TOKEN, tbot
-
 
 try:
     tbot.start(bot_token=TOKEN)
