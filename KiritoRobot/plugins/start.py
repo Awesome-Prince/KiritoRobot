@@ -4,7 +4,11 @@ from KiritoRobot import tbot
 from telethon import events, Button
 
 PM_START_TEXT = """
-huh
+────「 [Kirito Robot 키리토](https://telegra.ph/file/36dd96df77bc2b7ef9b3d.png) 」────
+*Hola! {},
+I am an Anime themed advance group management bot with a lot of Cool Features.
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+➛ Use System Call Command Below To Know My Abilities ××*
 """
 
 @tbot.on(events.NewMessage(pattern="^[?!/]start$"))
