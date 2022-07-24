@@ -1,6 +1,6 @@
 from telethon import events, Button
 from KiritoRobot import tbot
-from Kiritorobot.Configs import Config
+from KiritoRobot.Configs import Config
 
 btn =[
     [Button.inline("Admin", data="admin"), Button.inline("Bans", data="bans")],
