@@ -1,4 +1,3 @@
-import KiritoRobot.utils
 from . import TOKEN, tbot
 
 try:
