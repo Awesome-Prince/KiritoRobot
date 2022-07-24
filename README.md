@@ -33,7 +33,7 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 ```console
     ~$ git clone https://github.com/Awesome-Prince/KiritoRobot
     ~$ cd KiritoRobot
-    ~$ cp config.py
+    ~$ cp configs.py
 ```
 
 Edit Config.py with your own Values
