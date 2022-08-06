@@ -19,4 +19,4 @@ async def term(event):
     stdout, stderr = await async_process.communicate()
     msg = ""
     if stderr.decode():
-        msg += f"**Stderr:**\n
+    msg += f"**Stderr:**\n
