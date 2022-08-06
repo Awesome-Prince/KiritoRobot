@@ -23,6 +23,6 @@ jobs:
         run: |
           git config --global user.name 'Awesome-Prince'
           git config --global user.email 'Awesome-Prince@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$awesome-prince/KiritoRobot
           git commit -am "Auto Code Formatting"
           git push
