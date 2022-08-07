@@ -4,8 +4,8 @@ import requests
 from KiritoRobot import tbot
 
 from telethon import events, Button
-from ..helpers.search import shorten, anime_query, GRAPHQL
-from ..helpers.other import format_results, conv_to_jpeg
+from KiritoRobot.anime_helper.search import shorten, anime_query, GRAPHQL
+from KiritoRobot.anime_helper.other import format_results, conv_to_jpeg
 
 import logging
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
