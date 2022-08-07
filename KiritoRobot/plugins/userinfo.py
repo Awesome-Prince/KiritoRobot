@@ -1,11 +1,8 @@
-from telethon import events, Button, types
-from KiritoRobot import tbot
-from KiritoRobot.status import *
-from telethon.tl.types import ChannelParticipantsAdmins
-from datetime import timedelta
+from telethon import Button, events
 from telethon.tl.functions.photos import GetUserPhotosRequest as P
 from telethon.tl.functions.users import GetFullUserRequest
 
+from KiritoRobot import tbot
 
 USERINFO_HELP = """
 **🎮 An "odds and ends" module for small, simple commands which don't really fit anywhere.**
@@ -14,12 +11,13 @@ USERINFO_HELP = """
 ➛ `/info` - To get info of a user.
 """
 
+
 @tbot.on(events.NewMessage(pattern="^[!?/]id"))
 async def id(event):
 
     if event.is_private:
-       await event.reply(f"Your id is `{event.sender_id}`.")
-       return
+        await event.reply(f"Your id is `{event.sender_id}`.")
+        return
 
     ID = """
 **Chat-ID:** `{}`
@@ -28,11 +26,12 @@ async def id(event):
 
     msg = await event.get_reply_message()
     if not msg:
-      await event.reply(ID.format(event.chat_id, event.sender_id))
-      return
+        await event.reply(ID.format(event.chat_id, event.sender_id))
+        return
 
     await event.reply(f"User {msg.sender.first_name} id is `{msg.sender_id}`.")
- 
+
+
 @tbot.on(events.NewMessage(pattern="^[!?/]info ?(.*)"))
 async def info(event):
 
@@ -49,9 +48,20 @@ async def info(event):
 
     input_str = event.pattern_match.group(1)
     if not input_str:
-          await tbot.send_message(event.chat_id, text.format(hn.user.first_name, hn.user.last_name, event.sender_id, event.sender.username, sed.count, hn.about, event.sender_id))
-          return
- 
+        await tbot.send_message(
+            event.chat_id,
+            text.format(
+                hn.user.first_name,
+                hn.user.last_name,
+                event.sender_id,
+                event.sender.username,
+                sed.count,
+                hn.about,
+                event.sender_id,
+            ),
+        )
+        return
+
     input_str = event.pattern_match.group(1)
     ha = await tbot.get_entity(input_str)
     hu = await tbot(GetFullUserRequest(id=input_str))
@@ -66,8 +76,12 @@ async def info(event):
     textn += "**➛ BIO:** `{}`\n"
     textn += "**➛ PERMALINK:** [Link](tg://user?id={})\n"
 
-    await event.reply(textn.format(ha.first_name, ha.last_name, ha.id, ha.username, sedd.count, hu.about, ha.id))
-   
+    await event.reply(
+        textn.format(
+            ha.first_name, ha.last_name, ha.id, ha.username, sedd.count, hu.about, ha.id
+        )
+    )
+
 
 @tbot.on(events.callbackquery.CallbackQuery(data="userinfo"))
 async def _(event):

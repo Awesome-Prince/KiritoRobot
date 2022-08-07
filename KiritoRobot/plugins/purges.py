@@ -1,7 +1,9 @@
-from telethon import events, Button
+import time
+
+from telethon import Button, events
+
 from KiritoRobot import tbot
 from KiritoRobot.status import *
-import time
 
 PR_HELP = """
 **🎮 Need to delete lots of messages? That's what purges are for!**
@@ -11,17 +13,19 @@ PR_HELP = """
 ➛ `/del` - Deletes the replied to message.
 """
 
+
 @tbot.on(events.NewMessage(pattern=r"^[?!]purge"))
 @is_admin
 async def purge_messages(event, perm):
     if not perm.delete_messages:
-         await event.reply("You are missing the following rights to use this command:CanDelMsgs!")
-         return
+        await event.reply(
+            "You are missing the following rights to use this command:CanDelMsgs!"
+        )
+        return
     start = time.perf_counter()
     reply_msg = await event.get_reply_message()
     if not reply_msg:
-        await event.reply(
-            "Reply to a message to select where to start purging from.")
+        await event.reply("Reply to a message to select where to start purging from.")
         return
     messages = []
     message_id = reply_msg.id
@@ -37,19 +41,21 @@ async def purge_messages(event, perm):
     await event.client.delete_messages(event.chat_id, messages)
     time_ = time.perf_counter() - start
     text = f"Purged in {time_:0.2f} Second(s)"
-    await event.respond(text, parse_mode='markdown')
+    await event.respond(text, parse_mode="markdown")
+
 
 @tbot.on(events.NewMessage(pattern="^[!?/]spurge"))
 @is_admin
 async def spurge(event, perm):
     if not perm.delete_messages:
-         await event.reply("You are missing the following rights to use this command:CanDelMsgs!")
-         return
-    start = time.perf_counter()
+        await event.reply(
+            "You are missing the following rights to use this command:CanDelMsgs!"
+        )
+        return
+    time.perf_counter()
     reply_msg = await event.get_reply_message()
     if not reply_msg:
-        await event.reply(
-            "Reply to a message to select where to start purging from.")
+        await event.reply("Reply to a message to select where to start purging from.")
         return
     messages = []
     message_id = reply_msg.id
@@ -64,19 +70,23 @@ async def spurge(event, perm):
 
     await event.client.delete_messages(event.chat_id, messages)
 
+
 @tbot.on(events.NewMessage(pattern="^[!?/]del$"))
 @is_admin
 async def delete_messages(event, perm):
     if not perm.delete_messages:
-       await event.reply("You are missing the following rights to use this command:CanDelMsgs!")
-       return
+        await event.reply(
+            "You are missing the following rights to use this command:CanDelMsgs!"
+        )
+        return
     msg = await event.get_reply_message()
     if not msg:
-      await event.reply("Reply to a msg to delete it.")
-      return
+        await event.reply("Reply to a msg to delete it.")
+        return
 
     await msg.delete()
     await event.delete()
+
 
 @tbot.on(events.callbackquery.CallbackQuery(data="purges"))
 async def _(event):

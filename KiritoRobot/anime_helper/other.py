@@ -1,4 +1,5 @@
 import requests
+
 from KiritoRobot.anime_helper.search import shorten
 
 
@@ -21,21 +22,26 @@ def format_results(json):
 **Score**: {json['averageScore']}
 **Genres**: `
 """
-    for x in json['genres']:
+    for x in json["genres"]:
         msg += f"{x}, "
-    msg = msg[:-2] + '`\n'
+    msg = msg[:-2] + "`\n"
     msg += "**Studios**: `"
-    for x in json['studios']['nodes']:
+    for x in json["studios"]["nodes"]:
         msg += f"{x['name']}, "
-    msg = msg[:-2] + '`\n'
-    info = json.get('siteUrl')
-    trailer = json.get('trailer', None)
+    msg = msg[:-2] + "`\n"
+    info = json.get("siteUrl")
+    trailer = json.get("trailer", None)
     if trailer:
-        trailer_id = trailer.get('id', None)
-        site = trailer.get('site', None)
+        trailer_id = trailer.get("id", None)
+        site = trailer.get("site", None)
         if site == "youtube":
-            trailer = 'https://youtu.be/' + trailer_id
-    description = json.get('description', 'N/A').replace('<i>', '').replace('</i>', '').replace('<br>', '')
+            trailer = "https://youtu.be/" + trailer_id
+    description = (
+        json.get("description", "N/A")
+        .replace("<i>", "")
+        .replace("</i>", "")
+        .replace("<br>", "")
+    )
     msg += shorten(description, info)
-    image = info.replace('anilist.co/anime/', 'img.anili.st/media/')
+    image = info.replace("anilist.co/anime/", "img.anili.st/media/")
     return msg, info, trailer, image

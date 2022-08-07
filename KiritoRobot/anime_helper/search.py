@@ -1,8 +1,7 @@
-
-def shorten(description, info='anilist.co'):
+def shorten(description, info="anilist.co"):
     ms_g = ""
     if len(description) > 700:
-        description = description[0:500] + '....'
+        description = description[0:500] + "...."
         ms_g += f"\n**Description**: __{description}__[Read More]({info})"
     else:
         ms_g += f"\n**Description**: __{description}__"
@@ -13,7 +12,8 @@ def shorten(description, info='anilist.co'):
         .replace("</i>", "")
     )
 
-airing_query = '''
+
+airing_query = """
     query ($id: Int,$search: String) { 
       Media (id: $id, type: ANIME,search: $search) { 
         id
@@ -31,7 +31,7 @@ airing_query = '''
         } 
       }
     }
-    '''
+    """
 
 fav_query = """
 query ($id: Int) { 
@@ -46,7 +46,7 @@ query ($id: Int) {
 }
 """
 
-anime_query = '''
+anime_query = """
    query ($id: Int,$search: String) { 
       Media (id: $id, type: ANIME,search: $search) { 
         id
@@ -82,7 +82,7 @@ anime_query = '''
           bannerImage
       }
     }
-'''
+"""
 character_query = """
     query ($query: String) {
         Character (search: $query) {

@@ -1,5 +1,4 @@
 from . import TOKEN, tbot
-import KiritoRobot.utils
 
 try:
     tbot.start(bot_token=TOKEN)

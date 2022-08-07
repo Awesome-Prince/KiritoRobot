@@ -1,10 +1,10 @@
-from telethon import events, Button
+from telethon import Button, events
 from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
-from telethon.tl.types import ChannelParticipantsAdmins, ChatBannedRights
+from telethon.tl.types import ChatBannedRights
+
 from KiritoRobot import tbot
 from KiritoRobot.status import *
-
 
 CLEANER_HELP = """
 **🎮 This is A Module To Remove Deleted Accounts From Your Groups!**
@@ -42,23 +42,23 @@ UNBAN_RIGHTS = ChatBannedRights(
 @is_admin
 async def clean(event, perm):
     if not perm.ban_users:
-      await event.reply("You don't have enough rights")
-      return
+        await event.reply("You don't have enough rights")
+        return
     input_str = event.pattern_match.group(1)
     stats = "Group is clean."
     deleted = 0
 
     if "clean" not in input_str:
-      zombies = await event.respond("Searching For Zombies/Deleted Accounts...")
-      async for user in event.client.iter_participants(event.chat_id):
+        zombies = await event.respond("Searching For Zombies/Deleted Accounts...")
+        async for user in event.client.iter_participants(event.chat_id):
 
             if user.deleted:
                 deleted += 1
-      if deleted > 0:
+        if deleted > 0:
             stats = f"Found **{deleted}** Zombies In This Group.\
             \nClean Them By Using - `/zombies clean`"
-      await zombies.edit(stats)
-      return
+        await zombies.edit(stats)
+        return
 
     cleaning_zombies = await event.respond("Cleaning Zombies/Deleted Accounts...")
     del_u = 0
@@ -87,6 +87,7 @@ async def clean(event, perm):
         \n`{del_a}` Zombie Admin Accounts Are Not Removed!"
 
     await cleaning_zombies.edit(stats)
+
 
 @tbot.on(events.callbackquery.CallbackQuery(data="zombies"))
 async def _(event):
