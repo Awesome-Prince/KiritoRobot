@@ -31,4 +31,4 @@ DB_URI = os.environ.get("DATABASE_URL", "")
 SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 BOT_ID = 5534493283
 
-tbot = TelegramClient(None, API_KEY, API_HASH).start(bot_token=TOKEN)
+tbot = TelegramClient(None, API_KEY, API_HASH)
