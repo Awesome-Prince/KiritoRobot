@@ -16,7 +16,7 @@ logging.basicConfig(
 @tbot.on(events.NewMessage(incoming=True, pattern="/anime ?(.*)"))
 async def anime(event):
     input_str = event.pattern_match.group(1)
-    ing = await AnimeBot.send_message(
+    ing = await tbot.send_message(
         event.chat_id, f"__Searching for__ `{input_str}` __in Anilist__"
     )
     variables = {"search": input_str}
