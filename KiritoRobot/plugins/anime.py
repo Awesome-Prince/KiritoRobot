@@ -81,6 +81,11 @@ async def anime(event):
                 msg += f" [\u2063]({image})"
                 await ing.edit(msg, buttons=buttons)
 
+ADMIN_TEXT = """
+**🎮 A module for search anime!**
+➛ `/anime` - To Search Anime Info.
+"""
+
 @tbot.on(events.callbackquery.CallbackQuery(data="anime"))
 async def _(event):
-    await event.edit(CLEANER_HELP, buttons=[[Button.inline("◀ 𝖡𝖺𝖼𝗄", data="help")]])
+    await event.edit(ANIME_HELP, buttons=[[Button.inline("◀ 𝖡𝖺𝖼𝗄", data="help")]])
