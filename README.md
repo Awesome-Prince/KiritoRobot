@@ -2,7 +2,11 @@
 
 # KiritoRobot [ BETA ]
 
-**A modular Telegram Python bot running on python3 with a telethon, sqlalchemy.**
+**A modular Telegram Python bot running on python3 with a telethon**
+
+###  Infomation
+- Language: Python.
+- Telegram Library: Telethon.
 
 <details>
 	<summary>Heroku Deploy</summary>
@@ -13,7 +17,7 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 	
   <h1>
     <p align="center">
-        <a href="https://heroku.com/deploy?template=https://github.com/Awesome-Prince/KiritoRobot">
+        <a href="https://heroku.com/deploy?template=https://github.com/Awesome-Prince/KiritoRobot.git">
             <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
         </a>
     </p>
@@ -31,7 +35,7 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 </p>
 
 ```console
-    ~$ git clone https://github.com/Awesome-Prince/KiritoRobot
+    ~$ git clone https://github.com/Awesome-Prince/KiritoRobot.git
     ~$ cd KiritoRobot
     ~$ cp configs.py
 ```
