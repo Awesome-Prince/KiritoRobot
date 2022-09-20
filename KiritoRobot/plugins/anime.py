@@ -80,3 +80,7 @@ async def anime(event):
             except:
                 msg += f" [\u2063]({image})"
                 await ing.edit(msg, buttons=buttons)
+
+@tbot.on(events.callbackquery.CallbackQuery(data="anime"))
+async def _(event):
+    await event.edit(CLEANER_HELP, buttons=[[Button.inline("◀ 𝖡𝖺𝖼𝗄", data="help")]])
