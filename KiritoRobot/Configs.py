@@ -9,4 +9,4 @@ class Config(object):
     WELCOME_TEXT = os.environ.get(
         "WELCOME_TEXT", "Cardinal System Is Damaged!, Sorry I Cant Remember You."
     )
-    RULES = os.environ.get("RULES", "https://t.me/BlackLover_Updates/8")
+    RULES = os.environ.get("RULES", "https://t.me/Programmer_Updates/8")
