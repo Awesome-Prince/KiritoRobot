@@ -25,7 +25,7 @@ import re
 
 import bs4
 import requests
-from telethon import types
+from telethon import types, events
 from telethon.tl import functions
 
 from KiritoRobot import tbot
