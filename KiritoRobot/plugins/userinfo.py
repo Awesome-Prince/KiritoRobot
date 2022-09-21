@@ -33,7 +33,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from KiritoRobot import tbot
 
 USERINFO_HELP = """
-**🎮 An "odds and ends" module for small, simple commands which don't really fit anywhere.**
+**🎮 An Powerful Element for small, simple commands which don't really fit anywhere.**
 
 ➛ `/id` - To get current chat id or replied user id.
 ➛ `/info` - To get info of a user.
