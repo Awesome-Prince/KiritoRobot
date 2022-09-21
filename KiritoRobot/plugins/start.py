@@ -55,3 +55,12 @@ async def start(event):
     if event.is_group:
         await event.reply("**System Is Alive!**")
         return
+
+@tbot.on(events.callbackquery.CallbackQuery(data="back"))
+async def _(event):
+    btn =[
+            [Button.inline("System Call", data="help")],
+            [Button.url("Report Error", "https://t.me/Programmer_Support")],
+        ]
+
+    await event.edit(PM_START_TEXT.format(event.sender.first_name), buttons=btn)

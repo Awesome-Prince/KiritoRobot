@@ -36,6 +36,9 @@ btn = [
     [Button.inline("Bans", data="bans"), Button.inline("Pins", data="pins")],
     [Button.inline("Purges", data="purges"), Button.inline("Locks", data="locks")],
     [Button.inline("UserInfo", data="userinfo"), Button.inline("Zombies", data="zombies")],
+    
+    [Button.inline("Back", data="back")]
+
 ]
 
 HELP_TEXT = """
