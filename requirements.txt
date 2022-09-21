@@ -5,3 +5,4 @@ apscheduler
 bs4
 lxml
 heroku3
+fontTools
