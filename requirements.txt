@@ -1,7 +1,5 @@
 telethon
 sqlalchemy
-psycopg2-binary
-gitpython
 requests
 apscheduler
 bs4
