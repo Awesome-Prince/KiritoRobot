@@ -1,7 +1,21 @@
 ![KiritoRobot](https://telegra.ph/file/36dd96df77bc2b7ef9b3d.png)
 
 # KiritoRobot [ BETA ]
-[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause) [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/Awesome-Prince/KiritoRobot/?ref=repository-badge) [![Join Support!](https://img.shields.io/badge/Join%20Channel-!-red)](https://telegram.dog/Programmer_Support) [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/Awesome-Prince/KiritoRobot/graphs/contributors/)
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Dank-del/)</br>
+
+
+![Python Version](https://img.shields.io/badge/python-3.8-green?style=for-the-badge&logo=appveyor)
+![Issues](https://img.shields.io/github/issues/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
+![Forks](https://img.shields.io/github/forks/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
+![Stars](https://img.shields.io/github/stars/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
+![LICENSE](https://img.shields.io/github/license/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
+![Contributors](https://img.shields.io/github/contributors/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
+![Repository Size](https://img.shields.io/github/repo-size/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)</br>
+
+
+[![Join Support!](https://img.shields.io/badge/Support%20Chat-EagleUnion-red)](https://t.me/Programmer_Support)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cfb691a93a064d9ea753ef2b5fccf797)](https://www.codacy.com/manual/Awesome-Prince/KiritoRobot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Awesome-Prince/KiritoRobot&amp;utm_campaign=Badge_Grade)
 
 **A modular Telegram Python bot running on python3 with a telethon & Sqlalchemy database**
 
