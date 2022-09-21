@@ -52,7 +52,7 @@ TOKEN = os.environ.get("TOKEN")
 OWNER_ID = int(os.environ.get("OWNER_ID", 5362971543))
 APP_ID = int(os.environ.get("APP_ID", 12345))
 API_HASH = os.environ.get("API_HASH", "12345")
-DB_URI = os.environ.get("DATABASE_URL", "")
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
 SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 BOT_ID = 5534493283
 
