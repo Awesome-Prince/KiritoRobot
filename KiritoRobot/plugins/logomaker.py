@@ -30,7 +30,6 @@ import requests
 from PIL import Image, ImageDraw, ImageFont
 
 from KiritoRobot import OWNER_ID, tbot
-from KiritoRobot.events import register
 
 LOGO_LINKS = [
     "https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
@@ -265,7 +264,7 @@ LOGO_LINKS = [
 ]
 
 
-@register(pattern="^/logo ?(.*)")
+@tbot.on(events.NewMessage(pattern="^[!?/]logo ?(.*)"))
 async def lego(event):
     quew = event.pattern_match.group(1)
     if event.sender_id != OWNER_ID and not quew:
