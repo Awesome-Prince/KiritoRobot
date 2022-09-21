@@ -195,6 +195,7 @@ async def imdb(e):
         
 IMDB_HELP = """
 **🎮 An Powerful Element For Searching Movie Imdb Rate!**
+
 ➛ `/imdb <query>` - To See your moive imdb rate.
 """
         
