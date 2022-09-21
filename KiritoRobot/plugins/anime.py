@@ -82,8 +82,8 @@ async def anime(event):
                 await ing.edit(msg, buttons=buttons)
 
 ADMIN_TEXT = """
-**🎮 A module for search anime!**
-➛ `/anime` - To Search Anime Info.
+**🎮 A Elament Power To Get Information About Anime!**
+➛ `/anime <query>` - Returns Information About The Anime.
 """
 
 @tbot.on(events.callbackquery.CallbackQuery(data="anime"))
