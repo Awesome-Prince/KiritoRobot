@@ -56,7 +56,7 @@ async def is_register_admin(chat, user):
     return None
 
 
-@register(pattern="^/imdb (.*)")
+@tbot.on(events.NewMessage(pattern="^[!?/]imdb ?(.*)"))
 async def imdb(e):
     if e.is_group and not (await is_register_admin(e.input_chat, e.message.sender_id)):
         await event.reply(
