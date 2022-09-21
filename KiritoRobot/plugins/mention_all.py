@@ -23,8 +23,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import asyncio
 
-
-
 from telethon import events
 from telethon.errors import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
@@ -108,5 +106,14 @@ async def cancel_spam(event):
         pass
     return await event.respond("Mentioning Are Stopped")
 
+TAGALL_HELP = """
+**🎮 An Powerful Element To Mentaion All!**
+➛ `/tagall` - To mention all.
+➛ `/cancel` - To stop mention all.
+**❍ Note:** __This Element will notify all chat members.__
+"""
 
-__mod_name__ = "Mention 
+@tbot.on(events.callbackquery.CallbackQuery(data="tagall"))
+async def _(event):
+
+    await event.edit(TAGALL_HELP, buttons=[[Button.inline("◀ 𝖡𝖺𝖼𝗄", data="help")]])
