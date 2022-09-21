@@ -28,7 +28,6 @@ from telethon.tl.types import ChatBannedRights
 
 from KiritoRobot import OWNER_ID
 from KiritoRobot import tbot
-from KiritoRobot.events import register
 from KiritoRobot.plugins.sql.nightmode_sql import (
     add_nightmode,
     get_all_chat_id,
@@ -90,7 +89,7 @@ async def can_change_info(message):
     )
 
 
-@register(pattern="^/(nimode|Nightmode|NightMode) ?(.*)")
+@tbot.on(events.NewMessage(pattern="^/(nimode|Nightmode|NightMode) ?(.*)"))
 async def profanity(event):
     if event.fwd_from:
         return
