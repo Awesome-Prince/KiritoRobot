@@ -9,7 +9,7 @@
 ![Issues](https://img.shields.io/github/issues/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
 ![Forks](https://img.shields.io/github/forks/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
 ![Stars](https://img.shields.io/github/stars/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
-![LICENSE](https://img.shields.io/github/license/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
+![LICENSE](https://img.shields.io/github/LICENSE/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
 ![Contributors](https://img.shields.io/github/contributors/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)
 ![Repository Size](https://img.shields.io/github/repo-size/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)</br>
  
