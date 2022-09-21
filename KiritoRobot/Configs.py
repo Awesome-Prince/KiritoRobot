@@ -2,8 +2,8 @@ import os
 
 
 class Config(object):
-    APP_ID = int(os.environ.get("APP_ID", 8378464))
-    API_HASH = os.environ.get("API_HASH", "5762838834:AAErBxVLN2_gzWPBb5zQtBcyeoEj9qNDDBY")
+    APP_ID = os.environ.get("APP_ID", None))
+    API_HASH = os.environ.get("API_HASH", None)
     TOKEN = os.environ.get("TOKEN", None)
     BOT_US = os.environ.get("BOT_US", "KiritoXProBot")
     WELCOME_TEXT = os.environ.get(
