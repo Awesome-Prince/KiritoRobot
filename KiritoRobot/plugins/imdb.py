@@ -29,7 +29,6 @@ from telethon import types
 from telethon.tl import functions
 
 from KiritoRobot import tbot
-from KiritoRobot.events import register
 
 langi = "en"
 
