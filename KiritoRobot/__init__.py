@@ -33,7 +33,7 @@ import time
 from logging import INFO, basicConfig, getLogger
 
 from telethon import TelegramClient
-from telethon.sessions import StringSession
+from telethon.sessions import MemorySession, StringSession
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -50,10 +50,22 @@ CMD_HELP = {}
 
 TOKEN = os.environ.get("TOKEN")
 OWNER_ID = int(os.environ.get("OWNER_ID", 5362971543))
-API_KEY = int(os.environ.get("API_KEY", 12345))
+APP_ID = int(os.environ.get("APP_ID", 12345))
 API_HASH = os.environ.get("API_HASH", "12345")
 DB_URI = os.environ.get("DATABASE_URL", "")
 SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 BOT_ID = 5534493283
 
-tbot = TelegramClient(None, API_KEY, API_HASH)
+# Credits Logger
+print(
+    "[KiritoRobot] System Is Starting. | SAO Project | BSD 2-Clause License."
+)
+print(
+    "[KiritoRobot] Game Link! Successfully Connected With SAO • Data Center • AinCard"
+)
+print(
+    "[KiritoRobot] Project Maintained By: github.com/Awesome-Prince (https://github.com/Awesome-Prince/KiritoRobot)"
+)
+
+print("[KiritoRobot]: TELETHON CLIENT STARTING")
+tbot = TelegramClient(MemorySession(), APP_ID, API_HASH)
