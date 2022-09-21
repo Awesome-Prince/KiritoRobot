@@ -14,7 +14,7 @@
 ![Repository Size](https://img.shields.io/github/repo-size/Awesome-Prince/KiritoRobot?style=for-the-badge&logo=appveyor)</br>
 
 
-[![Join Support!](https://img.shields.io/badge/Support%20Chat-EagleUnion-red)](https://t.me/Programmer_Support)
+[![Join Support!](https://img.shields.io/badge/Support%20Chat-ProgrammerSupport-red)](https://t.me/Programmer_Support)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cfb691a93a064d9ea753ef2b5fccf797)](https://www.codacy.com/manual/Awesome-Prince/KiritoRobot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Awesome-Prince/KiritoRobot&amp;utm_campaign=Badge_Grade)
 
 **A modular Telegram Python bot running on python3 with a telethon & Sqlalchemy database**
