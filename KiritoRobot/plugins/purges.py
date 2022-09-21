@@ -34,7 +34,7 @@ from KiritoRobot import tbot
 from KiritoRobot.status import *
 
 PR_HELP = """
-**🎮 Need to delete lots of messages? That's what purges are for!**
+**🎮 An Powerful Element To Delete Lots Of Messages!**
 
 ➛ `/purge` - Reply to a msg to delete msgs from there.
 ➛ `/spurge` - Same as purge, but doesnt send the final confirmation message.
