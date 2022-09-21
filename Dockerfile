@@ -1,9 +1,17 @@
-FROM williambutcherbot/python:latest
+# syntax=docker/dockerfile:1
 
-RUN apt-get install -y neofetch ffmpeg sudo
+FROM python:3.10.6
 
-RUN pip3 install -U pip
-COPY requirements.txt .
-RUN pip3 install --no-cache-dir -U -r requirements.txt
+WORKDIR /app
+
+RUN apt-get -y update
+
+RUN apt-get -y install git gcc python3-dev
+
+COPY requirements.txt requirements.txt
+
+RUN pip3 install -U -r requirements.txt
+
 COPY . .
-CMD ["python3", "-m", "KiritoRobot"]
+
+CMD [ "python3", "-m" , "KiritoRobot"]
