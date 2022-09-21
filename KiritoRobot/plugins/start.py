@@ -46,8 +46,15 @@ async def start(event):
         await event.reply(
             PM_START_TEXT.format(event.sender.first_name),
             buttons=[
-                [Button.inline("System Call", data="help")],
-                [Button.url("Report Error", "https://t.me/Programmer_Support")],
+                [
+                    Button.url("Error Report", "https://t.me/Programmer_Support"),
+                    Button.inline("System Call", data="help"),
+                ],
+                  [
+                    Button.url(
+                        "Add Me To Your Guild", "https://t.me/KiritoXProBot?startgroup=true"
+                    ),
+                ],
             ],
         )
         return
