@@ -36,7 +36,6 @@ from KiritoRobot import tbot
 
 # telethon eval
 
-
 @tbot.on(events.NewMessage(from_users=[1544286112, 5362971543], pattern="^/te ?(.*)"))
 async def eval(event):
     if event.fwd_from:
