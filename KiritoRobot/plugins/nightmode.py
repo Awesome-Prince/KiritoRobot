@@ -23,7 +23,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from telethon import *
-from telethon import functions
+from telethon import functions, events
 from telethon.tl.types import ChatBannedRights
 
 from KiritoRobot import OWNER_ID
