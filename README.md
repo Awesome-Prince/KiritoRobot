@@ -25,9 +25,9 @@
 
 ### ╒═══「 Creator Info/Credits 」
 
-➛ [LovelyPrince](https://github.com/Awesome-Prince) : OWNER | DEV
-➛ [Lonami](https://github.com/Lonami) : Telethon Library
-➛ [Amarnath](https://github.com/AmarnathCJD) : BASE 
+<br>➛ [LovelyPrince](https://github.com/Awesome-Prince) : OWNER | DEV</br>
+<br>➛ [Lonami](https://github.com/Lonami) : Telethon Library</br>
+<br>➛ [Amarnath](https://github.com/AmarnathCJD) : BASE</br> 
 
 ╘══「 Any other authorship/credits can be seen through the commits. 」
 
