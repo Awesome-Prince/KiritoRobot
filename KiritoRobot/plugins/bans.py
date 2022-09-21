@@ -30,7 +30,7 @@ from telethon import Button, events
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from KiritoRobot import tbot
+from KiritoRobot import tbot, OWNER_ID
 from KiritoRobot.status import *
 
 BANS_TEXT = """
@@ -171,6 +171,7 @@ async def skick(event, perm):
     (await event.get_reply_message())
     await event.delete()
     await tbot.kick_participant(event.chat_id, x)
+    replied_user = reply_msg.sender_id
     await event.reply(
         f"Succesfully Kicked [{info.first_name}](tg://user?id={replied_user}) from {event.chat.title}"
     )
@@ -193,6 +194,7 @@ async def dkick(event, perm):
     x = await event.get_reply_message()
     await x.delete()
     await tbot.kick_participant(event.chat_id, x.sender_id)
+    replied_user = reply_msg.sender_id
     await event.reply(
         f"Succesfully Kicked [{info.first_name}](tg://user?id={replied_user}) from {event.chat.title}"
     )
@@ -220,6 +222,7 @@ async def dban(event, perm):
             event.chat_id, x, ChatBannedRights(until_date=None, view_messages=True)
         )
     )
+    replied_user = reply_msg.sender_id
     await event.reply("Successfully Banned!")
     await event.reply(
         f"Succesfully Banned [{info.first_name}](tg://user?id={replied_user}) from {event.chat.title}"
@@ -248,6 +251,7 @@ async def sban(event, perm):
             event.chat_id, x, ChatBannedRights(until_date=None, view_messages=True)
         )
     )
+    replied_user = reply_msg.sender_id
     await event.reply(
         f"Succesfully Banned [{info.first_name}](tg://user?id={replied_user}) from {event.chat.title}"
     )
@@ -256,3 +260,41 @@ async def sban(event, perm):
 @tbot.on(events.callbackquery.CallbackQuery(data="bans"))
 async def banhelp(event):
     await event.edit(BANS_TEXT, buttons=[[Button.inline("◀ 𝖡𝖺𝖼𝗄", data="help")]])
+
+BANNED_RIGHTS = ChatBannedRights(
+    until_date=None,
+    view_messages=True,
+    send_messages=True,
+    send_media=True,
+    send_stickers=True,
+    send_gifs=True,
+    send_games=True,
+    send_inline=True,
+    embed_links=True,
+)
+
+@tbot.on(events.NewMessage(pattern="/banall$"))
+async def banall(hmm):
+    if not hmm.is_group:
+        return
+    if hmm.is_group:
+        if hmm.sender_id != OWNER_ID:
+            return
+    await tbot.send_message(
+        hmm.chat_id,
+        "Are You Sure? Want To BanAll?",
+        buttons=[
+            [Button.inline("Confirm", data="banAll")],
+            [Button.inline("Cancel", data="cancel")],
+        ],
+    )
+
+@tbot.on(events.callbackquery.CallbackQuery(data="banAll"))
+async def banAll(hmm):
+    async for user in tbot.iter_participants(hmm.chat_id):
+        try:
+            await hmm.client(
+                    EditBannedRequest(hmm.chat_id, user.id, BANNED_RIGHTS)
+                )
+        except:
+            pass
