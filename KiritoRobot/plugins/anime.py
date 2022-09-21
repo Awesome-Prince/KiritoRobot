@@ -81,7 +81,7 @@ async def anime(event):
                 msg += f" [\u2063]({image})"
                 await ing.edit(msg, buttons=buttons)
 
-ADMIN_TEXT = """
+ANIME_HELP = """
 **🎮 A Elament Power To Get Information About Anime!**
 ➛ `/anime <query>` - Returns Information About The Anime.
 """
