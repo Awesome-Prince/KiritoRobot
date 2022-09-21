@@ -34,7 +34,7 @@ from KiritoRobot import tbot
 from KiritoRobot.status import *
 
 BANS_TEXT = """
-**🎮 Some people need to be publicly banned; spammers, annoyances, or just trolls.**
+**🎮 An Powerful Element To Destroy Your Enemies!**
 
 ➛ `/kickme` - To self Kick you from a chat.
 ➛ `/kick` - To kick someone from a chat.
