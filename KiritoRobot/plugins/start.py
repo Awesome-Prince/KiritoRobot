@@ -47,7 +47,7 @@ async def start(event):
             PM_START_TEXT.format(event.sender.first_name),
             buttons=[
                 [Button.inline("System Call", data="help")],
-                [Button.url("Report Error", "https://t.me/BlackLover_Support")],
+                [Button.url("Report Error", "https://t.me/Programmer_Support")],
             ],
         )
         return
