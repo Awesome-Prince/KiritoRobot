@@ -23,6 +23,14 @@
 - Language: Python.
 - Telegram Library: Telethon.
 
+### ╒═══「 Creator Info/Credits 」
+
+➛ [LovelyPrince](https://github.com/Awesome-Prince) : OWNER | DEV
+➛ [Lonami](https://github.com/Lonami) : Telethon Library
+➛ [Amarnath](https://github.com/AmarnathCJD) : BASE 
+
+╘══「 Any other authorship/credits can be seen through the commits. 」
+
 <details>
 	<summary>Heroku Deploy</summary>
 	<br>
