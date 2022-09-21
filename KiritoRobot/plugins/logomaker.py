@@ -27,6 +27,7 @@ import os
 import random
 
 import requests
+from telethon import events
 from PIL import Image, ImageDraw, ImageFont
 
 from KiritoRobot import OWNER_ID, tbot
