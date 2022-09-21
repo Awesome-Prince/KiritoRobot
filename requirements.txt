@@ -1,5 +1,5 @@
 telethon
-sqlalchemy
+sqlalchemy==1.3.23
 requests
 apscheduler
 bs4
