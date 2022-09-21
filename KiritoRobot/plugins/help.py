@@ -32,10 +32,10 @@ from KiritoRobot import tbot
 from KiritoRobot.Configs import Config
 
 btn = [
-    [Button.inline("Admin", data="admin"), Button.inline("Bans", data="bans")],
-    [Button.inline("Pins", data="pins"), Button.inline("Pugres", data="purges")],
-    [Button.inline("Locks", data="locks"), Button.inline("UserInfo", data="userinfo")],
-    [Button.inline("Zombies", data="zombies")],
+    [Button.inline("Admin", data="admin"), Button.inline("Anime", data="anime")],
+    [Button.inline("Bans", data="bans"), Button.inline("Pins", data="pins")],
+    [Button.inline("Purges", data="purges"), Button.inline("Locks", data="locks")],
+    [Button.inline("UserInfo", data="userinfo"), Button.inline("Zombies", data="zombies")],
 ]
 
 HELP_TEXT = """
