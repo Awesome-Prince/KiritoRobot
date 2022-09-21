@@ -1,2 +1,0 @@
-LOGGER.debug("Baka")
-return ""
