@@ -190,7 +190,7 @@ async def imdb(e):
         )
 
     except IndexError:
-        await e.reply("Please enter a valid movie name !")
+        await e.reply("movie not founded!")
         
 IMDB_HELP = """
 **🎮 An Powerful Element For Searching Movie Imdb Rate!**
