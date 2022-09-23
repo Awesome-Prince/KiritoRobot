@@ -73,7 +73,7 @@ def query(**args):
     return decorator
 
 
-def Cinline(**args):
+def swordinline(**args):
     def decorator(func):
         tbot.add_event_handler(func, events.CallbackQuery(**args))
         return func
