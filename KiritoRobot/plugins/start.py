@@ -62,9 +62,13 @@ async def start(event):
 
 @tbot.on(events.callbackquery.CallbackQuery(data="back"))
 async def _(event):
-    btn =[
-            [Button.inline("System Call", data="help")],
-            [Button.url("Report Error", "https://t.me/Programmer_Support")],
-        ]
+    btn = [
+    [Button.url("Add To Your Guild", "https://t.me/KiritoRobot?startgroup=true")],
+    [
+        Button.inline("Terms And Conditions", data="tc"),
+        Button.url("Error Report", "https://t.me/Programmer_Support"),
+    ],
+    [Button.inline("System Call", data="help")],
+]
 
     await event.edit(PM_START_TEXT.format(event.sender.first_name), buttons=btn)
