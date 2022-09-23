@@ -45,18 +45,15 @@ async def start(event):
     if event.is_private:
         await event.reply(
             PM_START_TEXT.format(event.sender.first_name),
-            buttons=[
-                [
-                    Button.url("Error Report", "https://t.me/Programmer_Support"),
-                    Button.inline("System Call", data="help"),
-                ],
-                  [
-                    Button.url(
-                        "Add Me To Your Guild", "https://t.me/KiritoXProBot?startgroup=true"
-                    ),
-                ],
-            ],
-        )
+            buttons = [
+    [Button.url("Add To Your Guild", "https://t.me/KiritoRobot?startgroup=true")],
+    [
+        Button.inline("Terms And Conditions", data="tc"),
+        Button.url("Error Report", "https://t.me/Programmer_Support"),
+    ],
+    [Button.inline("System Call", data="help")],
+]
+
         return
 
     if event.is_group:
