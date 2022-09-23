@@ -60,6 +60,11 @@ async def start(event):
     if event.is_group:
         await event.reply("**System Is Alive!**")
         return
+           
+@swordinline(pattern="tc")
+async def t_c(e):
+    buttons = Button.inline("Back", data="back")
+    await e.edit(tc, buttons=buttons, link_preview=False)
 
 @swordinline(pattern=r"back")
 async def _(event):
