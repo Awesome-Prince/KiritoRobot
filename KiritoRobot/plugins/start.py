@@ -46,7 +46,7 @@ async def start(event):
         await event.reply(
             PM_START_TEXT.format(event.sender.first_name),
             buttons = [
-    [Button.url("Add To Your Guild", "https://t.me/KiritoRobot?startgroup=true")],
+    [Button.url("Add To Your Guild", "https://t.me/KiritoXProBot?startgroup=true")],
     [
         Button.inline("Terms And Conditions", data="tc"),
         Button.url("Error Report", "https://t.me/Programmer_Support"),
@@ -63,7 +63,7 @@ async def start(event):
 @tbot.on(events.callbackquery.CallbackQuery(data="back"))
 async def _(event):
     btn = [
-    [Button.url("Add To Your Guild", "https://t.me/KiritoRobot?startgroup=true")],
+    [Button.url("Add To Your Guild", "https://t.me/KiritoXProBot?startgroup=true")],
     [
         Button.inline("Terms And Conditions", data="tc"),
         Button.url("Error Report", "https://t.me/Programmer_Support"),
