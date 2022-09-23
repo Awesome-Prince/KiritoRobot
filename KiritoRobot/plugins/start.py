@@ -29,6 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from telethon import Button, events
 
 from KiritoRobot import tbot
+from KiritoRobot.utils import KiritoRobot
 
 PM_START_TEXT = """
 ────「 [Kirito Robot 키리토](https://telegra.ph/file/36dd96df77bc2b7ef9b3d.png) 」────
@@ -60,7 +61,7 @@ async def start(event):
         await event.reply("**System Is Alive!**")
         return
 
-@tbot.on(events.callbackquery.CallbackQuery(data="back"))
+@ki(pattern=r"back")
 async def _(event):
     btn = [
     [Button.url("Add To Your Guild", "https://t.me/KiritoXProBot?startgroup=true")],
