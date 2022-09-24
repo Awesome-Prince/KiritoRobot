@@ -50,7 +50,7 @@ async def start(event):
     [Button.url("Add To Your Guild", "https://t.me/KiritoXProBot?startgroup=true")],
     [
         Button.inline("Terms And Conditions", data="tc"),
-        Button.url("Error Report", "https://t.me/Programmer_Support"),
+        Button.url("Error Report", "https://t.me/ProgrammerSupport"),
     ],
     [Button.inline("System Call", data="help")],
 ],
@@ -73,7 +73,7 @@ tc = """
 
 𝙉𝙊𝙏𝙀: 𝐓ᴇʀᴍ𝐬 𝐀ɴᴅ 𝐂ᴏɴᴅɪᴛɪᴏɴ𝐬 𝐌ɪɢʜᴛ 𝐂ʜᴀɴɢᴇ 𝐀ɴʏᴛɪᴍᴇ.
 **𝐒𝐞𝐫𝐯𝐞𝐫 𝐂𝐫𝐞𝐚𝐭𝐨𝐫:** [𝐂ʟɪᴄᴋ 𝐇ᴇʀᴇ](t.me/Its_IZ_Me_Prince_xd)
-**404 𝑹𝒆𝒑𝒐𝒓𝒕:** [𝐂ʟɪᴄᴋ 𝐇ᴇʀᴇ](t.me/Programmer_Support)
+**404 𝑹𝒆𝒑𝒐𝒓𝒕:** [𝐂ʟɪᴄᴋ 𝐇ᴇʀᴇ](t.me/ProgrammerSupport)
 """
 
            
@@ -88,7 +88,7 @@ async def _(event):
     [Button.url("Add To Your Guild", "https://t.me/KiritoXProBot?startgroup=true")],
     [
         Button.inline("Terms And Conditions", data="tc"),
-        Button.url("Error Report", "https://t.me/Programmer_Support"),
+        Button.url("Error Report", "https://t.me/ProgrammerSupport"),
     ],
     [Button.inline("System Call", data="help")],
 ]
