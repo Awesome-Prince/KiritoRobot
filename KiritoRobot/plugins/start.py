@@ -40,7 +40,7 @@ I am an Anime themed advance group management bot with a lot of Cool Features.**
 """
 
 
-@tbot.on(events.NewMessage(pattern="^[?!/]start$"))
+@tbot.on(events.NewMessage(pattern="^/start(@KiritoXProBot)?$"))
 async def start(event):
 
     if event.is_private:
@@ -59,7 +59,7 @@ async def start(event):
         return
 
     if event.is_group:
-        await event.reply("**System Is Alive!**")
+        await event.reply("**Black SwordMan Never Down!**")
         return
            
 tc = """
